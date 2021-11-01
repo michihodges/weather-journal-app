@@ -17,9 +17,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
+app.use(cors());
 
 // Initialize the main project folder
 app.use(express.static('website'));
 
 
 // Setup Server
+const port = 3000;
+
+const server = app.listen(port, listening);
+
+function listening() {
+    console.log("server running");
+    console.log(`running on localhost ${port}`);
+};
