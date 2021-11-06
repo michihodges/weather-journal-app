@@ -32,7 +32,15 @@ function listening() {
     console.log(`running on localhost ${port}`);
 };
 
-// GET request
-app.get('/', function (req, res) {
+// GET route
+app.get('/all', function (req, res) {
+    res.send(projectData);
+});
+
+// POST route with keys to values
+app.post('/addData', function (req, res) {
+    projectData.temp = req.body.temp;
+    projectData.date = req.body.date;
+    projectData.feel = req.body.feel;
     res.send(projectData);
 });
