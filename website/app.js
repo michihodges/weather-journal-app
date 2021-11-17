@@ -28,4 +28,4 @@ const postData = async ( url = '', data = {})=>{
       }
   }
 
-postData('/add', {answer:42});
+postData('/addMovie', {movie:' The Matrix', score: 5});
