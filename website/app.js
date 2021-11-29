@@ -6,6 +6,18 @@ const apiKey = '83fe249da30258ba3370fbbc31584eff';
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
+// GET request
+const getData = async ( url = '')=>{
+  const res = await fetch (url);
+  try{
+    const data = await res.json();
+    console.log(data);
+  }catch(error){
+    console.log("error",error);
+  }
+}
+getData('/all');
+
 // POST request
 const postData = async ( url = '', data = {})=>{
     console.log(data);

@@ -35,7 +35,7 @@ function listening() {
 
 // GET route
 app.get('/all', function (req, res) {
-    res.send('Hello World');
+    res.send({data : 'Hello World'});
     // res.send(projectData);
 });
 
