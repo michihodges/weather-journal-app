@@ -34,8 +34,12 @@ function listening() {
 };
 
 // GET route
+const appData = {};
+
 app.get('/all', function (req, res) {
-    res.send({data : 'Hello World'});
+    // res.send({data : 'Hello World'});
+    console.log(req);
+    res.send(appData);
     // res.send(projectData);
 });
 
