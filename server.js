@@ -44,9 +44,14 @@ app.get('/all', function (req, res) {
 });
 
 // POST route
-const data = [];
+// const data = [];
 
-app.post('/addMovie', function (req, res) {
-    data.push(req.body);
-    console.log(req.body);
+// app.post('/addMovie', function (req, res) {
+//    data.push(req.body);
+//    console.log(req.body);
+// });
+
+app.post('/add', function (request, response) {
+    let data = request.body;
+    console.log(data);
 });
