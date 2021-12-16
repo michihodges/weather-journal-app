@@ -6,7 +6,7 @@ const apiKey = '83fe249da30258ba3370fbbc31584eff&units=imperial';
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-// Write an async function in app.js that uses fetch() to make a GET request to the OpenWeatherMap API
+// Async GET
 
 // GET request
 const getData = async ( url = '')=>{
