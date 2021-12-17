@@ -7,6 +7,17 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Async GET
+const retrieveData = async (url='') =>{ 
+  const request = await fetch(url);
+  try {
+  // Transform into JSON
+  const allData = await request.json()
+  }
+  catch(error) {
+    console.log("error", error);
+    // appropriately handle the error
+  }
+}
 
 // GET request
 const getData = async ( url = '')=>{
