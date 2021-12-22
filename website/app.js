@@ -7,7 +7,7 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Async GET
-const retrieveData = async (url='') =>{ 
+const retrieveData = async (baseUrl, zip, apiKey) =>{ 
   const request = await fetch(url);
   try {
   // Transform into JSON
