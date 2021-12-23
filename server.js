@@ -33,6 +33,8 @@ function listening() {
     console.log(`running on localhost ${port}`);
 };
 
+
+// TEST CODE
 // GET route
 const appData = {};
 
