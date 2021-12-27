@@ -23,6 +23,8 @@ const retrieveData = async (baseUrl, testZip, apiKey) =>{
   }
 }
 
+retrieveData(baseUrl, testZip, apiKey);
+
 
 // TEST CODE
 // GET request
@@ -36,6 +38,7 @@ const getData = async ( url = '')=>{
     console.log("error",error);
   }
 }
+
 getData('/all');
 
 // POST request
