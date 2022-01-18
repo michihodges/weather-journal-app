@@ -9,7 +9,7 @@ const btn = document.querySelector('#generate');
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-// Event Listener
+// Event Listener with callBack
 btn.addEventListener('click' , callBack);
 
 // Async GET
