@@ -10,6 +10,7 @@ let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 console.log('new date');
 console.log(newDate);
+console.log(Date());
 
 // Event Listener with callBack
 // btn.addEventListener('click' , callBack);
