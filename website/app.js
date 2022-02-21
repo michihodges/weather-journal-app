@@ -1,3 +1,4 @@
+// Test
 /* Global Variables */
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '83fe249da30258ba3370fbbc31584eff';
