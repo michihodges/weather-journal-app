@@ -1,6 +1,11 @@
+// STEP 2 BOILERPLATE
+// SETUP ENDPOINT
 // Setup empty JS object to act as endpoint for all routes
 projectData = {
 };
+
+// STEP 1 BOILERPLATE
+// SETUP: NODE, EXPRESS, DEPENDENCIES AND SERVER
 
 // Require Express to run server and routes
 const express = require('express');
@@ -33,6 +38,11 @@ const server = app.listen(port, () => {
 
 
 // TEST CODE
+
+// Lesson 3
+// HTTP Requests and Routes
+
+// Sub-lessons 3 and 4
 // GET route
 const appData = {};
 
@@ -43,14 +53,18 @@ app.get('/all', function (req, res) {
     // res.send(projectData);
 });
 
+// Sub-lession 4
 // POST route
 const data = [];
 
 app.post('/addMovie', function (req, res) {
+    req.send('POST received');
     data.push(req.body);
     console.log(req.body);
 });
 
+
+// POST route
 app.post('/add', function (request, response) {
     let data = request.body;
     console.log(data);

@@ -5,6 +5,7 @@ const testZip = '10001'; // zip code for testing only
 
 // const btn = document.querySelector('#generate');
 
+// STEP 3
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
