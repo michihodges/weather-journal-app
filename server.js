@@ -47,8 +47,8 @@ const server = app.listen(port, ()=>{
 const appData = {};
 
 app.get('/all', function (req, res) {
-    // res.send({data : 'Hello World'});
-    console.log(req);
+    // res.send({data : 'Hello World'}); // confirms GET request by sending set response 
+    console.log(req); // logs request in terminal
     res.send(appData);
     // res.send(projectData);
 });
