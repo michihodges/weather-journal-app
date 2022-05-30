@@ -31,7 +31,7 @@ app.use(express.static('website'));
 // Setup Server
 const port = 3000;
 
-const server = app.listen(port, () => {
+const server = app.listen(port, ()=>{
     console.log("server running");
     console.log(`running on localhost ${port}`);
 });
@@ -53,7 +53,7 @@ app.get('/all', function (req, res) {
     // res.send(projectData);
 });
 
-// Sub-lession 4
+// Sub-lesson 4
 // POST route
 const data = [];
 
@@ -63,7 +63,7 @@ app.post('/addMovie', function (req, res) {
     console.log(req.body);
 });
 
-
+// Sub-lesson 6
 // POST route
 app.post('/add', function (request, response) {
     let data = request.body;

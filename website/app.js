@@ -52,27 +52,29 @@ const getData = async ( url = '')=>{
 
 getData('/all');
 
-// POST request
-const postData = async ( url = '', data = {})=>{
+// Sub-lesson 6
+// POST request made to POST route
+const postData = async ( url = '', data = {})=>{ // all of this is boilerplate
     console.log(data);
       const response = await fetch(url, {
-      method: 'POST', 
-      credentials: 'same-origin',
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      credentials: 'same-origin', // include, *same origin, omit
       headers: {
-          'Content-Type': 'application/json',
-      },
-     // Body data type must match "Content-Type" header        
-      body: JSON.stringify(data), 
+          'Content-Type': 'application/json', // ! set data type as json
+      },        
+      body: JSON.stringify(data), // ! body data type must match "Content-Type" header
     });
-
       try {
         const newData = await response.json();
         console.log(newData);
         return newData;
       }catch(error) {
-      console.log("error", error);
+      console.log("error", error); // appropriately handle the error
       }
   }
 
-postData('/addMovie', {movie:' The Matrix', score: 5});
-postData('/add', {answer:42});
+// Sub-lesson 4
+postData('/addMovie', {movie:' The Matrix', score: 5}); // example of what you can POST
+
+// Sub-lesson 6
+postData('/add', {answer:42}); // another example of what you can POST
