@@ -9,15 +9,13 @@ const testZip = '10001'; // zip code for testing only
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
-console.log('new date');
 console.log(newDate);
-console.log(Date());
 
 // Event Listener with callBack
 // btn.addEventListener('click' , callBack);
 
 // Async GET
-const retrieveData = async (baseUrl, testZip, apiKey) =>{ 
+const retrieveData = async (baseUrl, testZip, apiKey)=>{ 
   const res = await fetch(baseUrl + testZip + '&appid=' + apiKey + '&units=imperial');
   console.log('response');
   console.log(res);
