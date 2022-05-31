@@ -8,8 +8,8 @@ const testZip = '10001'; // zip code for testing only
 // STEP 3
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
-console.log(newDate);
+let newDate = d.getDate() + '.' + (d.getMonth() + 1 + '.') + d.getFullYear();
+console.log(`Date ${newDate}`);
 
 // Event Listener with callBack
 // btn.addEventListener('click' , callBack);
