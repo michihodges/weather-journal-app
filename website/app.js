@@ -1,9 +1,9 @@
-/* Global Variables */
-const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const apiKey = '83fe249da30258ba3370fbbc31584eff';
-const testZip = '10001'; // zip code for testing only
-
-// const btn = document.querySelector('#generate');
+// Global Variables
+// API
+let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+let apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
+//const testZip = '10001'; // zip code for testing only
+const zipCode = document.querySelector('#zip').value;
 
 // STEP 3
 // Create a new date instance dynamically with JS
@@ -11,19 +11,24 @@ let d = new Date();
 let newDate = `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`;
 console.log(`Date ${newDate}`);
 
+// STEP 4
 // Event Listener with callBack
-// btn.addEventListener('click' , callBack);
+const btn = document.querySelector('#generate');
+btn.addEventListener('click', performAction);
 
-// Async GET
-const retrieveData = async (baseUrl, testZip, apiKey)=>{ 
-  const res = await fetch(baseUrl + testZip + '&appid=' + apiKey + '&units=imperial');
+function performAction(e) {
+  retrieveData(baseUrl, zipCode, apiKey);
+}
+
+// Async GET Request
+const retrieveData = async (base, zip, key)=>{ 
+  const res = await fetch(base+zip+key);
   console.log('response');
   console.log(res);
   try {
   // Transform into JSON
     const data = await res.json();
-    console.log('data');
-    console.log(data);
+    console.log(`Data ${data}`);
     return data;
   }
   catch(error) {
@@ -31,8 +36,6 @@ const retrieveData = async (baseUrl, testZip, apiKey)=>{
     // appropriately handle the error
   }
 }
-
-retrieveData(baseUrl, testZip, apiKey);
 
 
 // TEST CODE
