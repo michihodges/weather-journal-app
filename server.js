@@ -58,6 +58,7 @@ app.post('/add', function (req, res) {
 
 // Sub-lessons 3 and 4
 // GET route
+/*
 const appData = {};
 
 app.get('/all', function (req, res) {
@@ -83,3 +84,4 @@ app.post('/add', function (request, response) {
     let data = request.body;
     console.log(data);
 });
+*/

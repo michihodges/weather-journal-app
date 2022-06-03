@@ -40,6 +40,7 @@ const retrieveData = async (base, zip, key)=>{
 
 // TEST CODE
 // GET request
+/*
 const getData = async ( url = '')=>{
   const res = await fetch (url);
   try{
@@ -79,3 +80,4 @@ postData('/addMovie', {movie:' The Matrix', score: 5}); // example of what you c
 
 // Sub-lesson 6
 postData('/add', {answer:42}); // another example of what you can POST
+*/
