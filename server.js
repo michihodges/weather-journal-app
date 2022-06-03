@@ -37,7 +37,7 @@ const server = app.listen(port, ()=>{
 });
 
 // GET Route
-app.get('/all', function (req, res) {
+app.get('/', function (req, res) {
     console.log(req); // logs request in terminal
     res.send(projectData);
 });
