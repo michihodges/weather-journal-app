@@ -36,6 +36,12 @@ const server = app.listen(port, ()=>{
     console.log(`running on localhost ${port}`);
 });
 
+// GET Route
+app.get('/all', function (req, res) {
+    console.log(req); // logs request in terminal
+    res.send(projectData);
+});
+
 
 // TEST CODE
 
