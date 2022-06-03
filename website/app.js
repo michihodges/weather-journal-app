@@ -23,7 +23,7 @@ function performAction(e) {
 // Async GET Request
 const retrieveData = async (base, zip, key)=>{ 
   const res = await fetch(base+zip+key);
-  console.log('response');
+  console.log('Async GET Request Response');
   console.log(res);
   try {
   // Transform into JSON
