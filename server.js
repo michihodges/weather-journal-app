@@ -44,9 +44,9 @@ app.get('/', function (req, res) {
 
 // POST Route
 app.post('/add', function (req, res) {
-    projectData.date = req.body.date;
-    projectData.temp = req.body.temp;
-    projectData.feelings = req.body.feelings;
+    date: req.body.date;
+    temp: req.body.temp;
+    feelings: req.body.feelings;
     res.send(projectData);
 });
 
