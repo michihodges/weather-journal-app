@@ -43,12 +43,18 @@ app.get('/', function (req, res) {
 });
 
 // POST Route
-app.post('/add', function (req, res) {
-    date: req.body.date;
-    temp: req.body.temp;
-    feelings: req.body.feelings;
-    res.send(projectData);
-});
+app.post('/add', entryData);
+
+function entryData (req, res) {
+    newEntry = {
+        date: req.body.date,
+        temp: req.body.temp,
+        feelings: req.body.feelings
+    }
+
+    postData.push(entryData);
+    console,log(postData)
+}
 
 
 // TEST CODE
