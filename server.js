@@ -43,7 +43,7 @@ app.get('/', function (req, res) {
 });
 
 // POST Route
-app.post('/add', entryData);
+app.post('/addEntry', entryData);
 
 function entryData (req, res) {
     newEntry = {
