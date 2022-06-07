@@ -18,6 +18,7 @@ btn.addEventListener('click', performAction);
 
 function performAction(e) {
   retrieveData(baseUrl, zipCode, apiKey);
+  console.log('Event clicked');
 }
 
 // Async GET Request
