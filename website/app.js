@@ -17,6 +17,7 @@ const btn = document.querySelector('#generate');
 btn.addEventListener('click', performAction);
 
 function performAction(e) {
+  e.preventDefault();
   retrieveData(baseUrl, zipCode, apiKey);
   console.log('Event clicked');
 }
