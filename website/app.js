@@ -1,16 +1,24 @@
-// Global Variables
-// API
+// STEP 4 BOILERPLATE
+// AQUIRE API CREDENTIALS
+
+// API credentials
 let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 let apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
 //const testZip = '10001'; // zip code for testing only
 
+
 // STEP 3
+// DATE
+
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`;
 console.log(`Date ${newDate}`);
 
-// STEP 4
+
+// STEP 7 BOILERPLATE
+// SETUP SUBMIT BUTTON
+
 // Event Listener with callBack
 const btn = document.querySelector('#generate');
 btn.addEventListener('click', performAction);
@@ -24,9 +32,13 @@ function performAction(e) {
   retrieveData(baseUrl, zipCode, apiKey);
 }
 
+
+// STEP 8 BOILERPLATE
+// SETUP ASYNC GET REQUEST WITH PROMISE AND FETCH
+
 // Async GET Request
-const retrieveData = async (base, zip, key)=>{ 
-  const res = await fetch(base+zip+key);
+const retrieveData = async (base, zip, key)=>{ // parameters are project specific not boilerplate
+  const res = await fetch(base+zip+key); // parameters are project specific not boilerplate
   console.log('Async GET Request response successful');
   console.log(res);
   try {
