@@ -3,7 +3,6 @@
 let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 let apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
 //const testZip = '10001'; // zip code for testing only
-const zipCode = document.querySelector('#zip').value;
 
 // STEP 3
 // Create a new date instance dynamically with JS
@@ -17,15 +16,18 @@ const btn = document.querySelector('#generate');
 btn.addEventListener('click', performAction);
 
 function performAction(e) {
-  e.preventDefault();
+  const zipCode = document.querySelector('#zip').value; // zip needs to be in function scope not global scope
+  //retrieveData(baseUrl, testZip, apiKey);
+  console.log('Event clicked and successfully retrieved data from API');
+  //console.log(`${baseUrl}${testZip}${apiKey}`);
+  console.log(`${baseUrl}${zipCode}${apiKey}`);
   retrieveData(baseUrl, zipCode, apiKey);
-  console.log('Event clicked');
 }
 
 // Async GET Request
 const retrieveData = async (base, zip, key)=>{ 
   const res = await fetch(base+zip+key);
-  console.log('Async GET Request Response');
+  console.log('Async GET Request response successful');
   console.log(res);
   try {
   // Transform into JSON
