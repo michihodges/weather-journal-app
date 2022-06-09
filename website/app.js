@@ -77,9 +77,9 @@ const postData = async ( url = '', data = {})=>{ // all of this is boilerplate
         'Content-Type': 'application/json', // ! set data type as json
     },        
     body: JSON.stringify({ // ! body data type must match "Content-Type" header
-      date: data.date,
-      temp: data.temp,
-      feelings: data.feelings
+      date: data.date, // project specific not boilerplate
+      temp: data.temp, // project specific not boilerplate
+      feelings: data.feelings // project specific not boilerplate
     })
   });
     try {

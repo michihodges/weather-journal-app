@@ -56,7 +56,7 @@ app.get('/', function (req, res) {
 app.post('/addEntry', entryData);
 
 function entryData (req, res) {
-    console.log(req.body);
+    console.log(req.body); // STEP 9
     newEntry = {
         date: req.body.date, // project specific not boilerplate
         temp: req.body.temp, // project specific not boilerplate
