@@ -25,16 +25,26 @@ btn.addEventListener('click', performAction);
 
 function performAction(e) {
   const zipCode = document.querySelector('#zip').value; // zip needs to be in function scope not global scope
+  const feelings = document.querySelector('#feelings').value; // zip needs to be in function scope not global scope
   //retrieveData(baseUrl, testZip, apiKey);
   console.log('Event clicked and successfully retrieved data from API');
   //console.log(`${baseUrl}${testZip}${apiKey}`);
   console.log(`${baseUrl}${zipCode}${apiKey}`);
-  retrieveData(baseUrl, zipCode, apiKey);
+  retrieveData(baseUrl, zipCode, apiKey)
+
+
+  // STEP 9 BOILERPLATE
+  // CHAIN POST PROMISE
+  .then(function(data){
+    console.log(`Data: ${data}`);
+    // Add data to POST request
+    postData('/add', {date: newDate, temp: data.main.temp, feelings})
+  })
 }
 
 
 // STEP 8 BOILERPLATE
-// SETUP ASYNC GET REQUEST WITH PROMISE AND FETCH
+// SETUP ASYNC GET REQUEST WITH PROMISE AND FETCH API
 
 // Async GET Request
 const retrieveData = async (base, zip, key)=>{ // parameters are project specific not boilerplate
@@ -51,6 +61,34 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
     console.log("error", error);
     // appropriately handle the error
   }
+}
+
+
+// STEP 9 BOILERPLATE
+// SETUP ASYNC POST REQUEST WITH PROMISE AND FETCH API
+
+// Async POST Request
+const postData = async ( url = '', data = {})=>{ // all of this is boilerplate
+  console.log(data);
+    const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    credentials: 'same-origin', // include, *same origin, omit
+    headers: {
+        'Content-Type': 'application/json', // ! set data type as json
+    },        
+    body: JSON.stringify({ // ! body data type must match "Content-Type" header
+      date: data.date,
+      temp: data.temp,
+      feelings: data.feelings
+    })
+  });
+    try {
+      const newData = await response.json();
+      console.log(newData);
+      return newData;
+    }catch(error) {
+    console.log("error", error); // appropriately handle the error
+    }
 }
 
 

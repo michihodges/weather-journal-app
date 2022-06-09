@@ -56,6 +56,7 @@ app.get('/', function (req, res) {
 app.post('/addEntry', entryData);
 
 function entryData (req, res) {
+    console.log(req.body);
     newEntry = {
         date: req.body.date, // project specific not boilerplate
         temp: req.body.temp, // project specific not boilerplate
@@ -63,7 +64,8 @@ function entryData (req, res) {
     }
 
     postData.push(entryData);
-    console,log(postData)
+    res.send(postData);
+    console,log(postData);
 }
 
 
