@@ -13,7 +13,6 @@ let apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`;
-console.log(`Date ${newDate}`);
 
 
 // STEP 7 BOILERPLATE
@@ -36,7 +35,6 @@ function performAction(e) {
   // STEP 9 BOILERPLATE
   // CHAIN POST PROMISE
   .then(function(data){
-    console.log(`Data: ${data}`);
     // Add data to POST request
     postData('/addEntry', {date: newDate, temp: data.main.temp, feelings})
   })
@@ -54,7 +52,6 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
   try {
   // Transform into JSON
     const data = await res.json();
-    console.log(`Data ${data}`);
     return data;
   }
   catch(error) {
