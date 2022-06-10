@@ -38,7 +38,7 @@ function performAction(e) {
   .then(function(data){
     console.log(`Data: ${data}`);
     // Add data to POST request
-    postData('/add', {date: newDate, temp: data.main.temp, feelings})
+    postData('/addEntry', {date: newDate, temp: data.main.temp, feelings})
   })
 }
 
@@ -68,7 +68,7 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
 // SETUP ASYNC POST REQUEST WITH PROMISE AND FETCH API
 
 // Async POST Request
-const postData = async ( url = '', data = {})=>{ // all of this is boilerplate
+const postData = async ( url = '', data = {})=>{
   console.log(data);
     const response = await fetch(url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
