@@ -1,3 +1,6 @@
+// WELCOME MESSAGE
+console.log('Hello world and welcome to my weather journal app');
+
 // STEP 4 BOILERPLATE
 // AQUIRE API CREDENTIALS
 
