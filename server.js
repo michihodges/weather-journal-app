@@ -63,10 +63,7 @@ function entryData (req, res) {
         temp: req.body.temp, // project specific not boilerplate
         feelings: req.body.feelings // project specific not boilerplate
     }
-
-    postData.push(entryData);
-    res.send(postData);
-    console,log(postData);
+    res.send(projectData);
 }
 
 
