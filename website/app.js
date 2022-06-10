@@ -38,7 +38,7 @@ function performAction(e) {
   .then(function(data){
     console.log(`Data: ${data}`);
     // Add data to POST request
-    postData('/addEntry', {date: newDate, temp: data.main.temp, feelings})
+    postData('/addEntry', {newDate, temp: data.main.temp, feelings})
   })
 }
 
