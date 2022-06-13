@@ -27,7 +27,7 @@ btn.addEventListener('click', performAction);
 
 function performAction(e) {
   const zipCode = document.querySelector('#zip').value; // zip needs to be in function scope not global scope
-  const feelings = document.querySelector('#feelings').value; // zip needs to be in function scope not global scope
+  const content = document.querySelector('#feelings').value; // zip needs to be in function scope not global scope
   //retrieveData(baseUrl, testZip, apiKey);
   console.log('Event clicked and successfully retrieved data from API');
   //console.log(`${baseUrl}${testZip}${apiKey}`);
@@ -39,7 +39,7 @@ function performAction(e) {
   // CHAIN POST PROMISE
   .then(function(data){
     // Add data to POST request
-    postData('/addEntry', {date: newDate, temp: data.main.temp, feelings})
+    postData('/addEntry', {date: newDate, temp: data.main.temp, content})
   })
 }
 
@@ -79,7 +79,7 @@ const postData = async ( url = '', data = {})=>{
     body: JSON.stringify({ // ! body data type must match "Content-Type" header
       date: data.date, // project specific not boilerplate
       temp: data.temp, // project specific not boilerplate
-      feelings: data.feelings // project specific not boilerplate
+      content: data.content // project specific not boilerplate
     })
   });
     try {

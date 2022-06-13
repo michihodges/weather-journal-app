@@ -61,7 +61,7 @@ function entryData (req, res) {
     newEntry = {
         date: req.body.date, // project specific not boilerplate
         temp: req.body.temp, // project specific not boilerplate
-        feelings: req.body.feelings // project specific not boilerplate
+        content: req.body.content // project specific not boilerplate
     }
     res.send(projectData);
 }
