@@ -41,6 +41,13 @@ function performAction(e) {
     // Add data to POST request
     postData('/addEntry', {date: newDate, temp: data.main.temp, content})
   })
+
+
+  // STEP 10 BOILERPLATE
+  // UPDATE UI
+  .then(
+    updateUi()
+  )
 }
 
 
@@ -89,6 +96,23 @@ const postData = async ( url = '', data = {})=>{
     }catch(error) {
     console.log("error", error); // appropriately handle the error
     }
+}
+
+
+// STEP 10 BOILERPLATE
+// UPDATE UI
+
+const updateUi = async ()=>{
+  const req = await fetch('/all');
+  try {
+    const allData = await req.json();
+    document.querySelector('#date').innerHTML = allData.date;
+    document.querySelector('#temp').innerHTML = Math.round(allData.temp)+ 'degrees';
+    document.querySelector('#content').innerHTML = allData.content;
+  }
+  catch(error) {
+    console.log('error', error); // appropriately handle the error
+  }
 }
 
 

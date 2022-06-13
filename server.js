@@ -43,7 +43,7 @@ const server = app.listen(port, ()=>{
 // SETUP GET ROUTE
 
 // GET Route
-app.get('/', function (req, res) {
+app.get('/all', function (req, res) {
     console.log(req); // logs request in terminal
     res.send(projectData);
 });
@@ -64,6 +64,7 @@ function entryData (req, res) {
         content: req.body.content // project specific not boilerplate
     }
     res.send(projectData);
+    console.log(projectData);
 }
 
 
