@@ -23,7 +23,7 @@ let newDate = `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()}`;
 
 // Event Listener with callBack
 const btn = document.querySelector('#generate');
-btn.addEventListener('click', performAction);
+btn.addEventListener('click', performAction); // submits and generates everything
 
 function performAction(e) {
   const zipCode = document.querySelector('#zip').value; // zip needs to be in function scope not global scope
@@ -60,7 +60,7 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
   console.log('Async GET Request response successful');
   console.log(res);
   try {
-  // Transform into JSON
+    // Transform into JSON
     const data = await res.json();
     return data;
   }
@@ -76,8 +76,9 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
 
 // Async POST Request
 const postData = async ( url = '', data = {})=>{
+  console.log('Async POST Request response successful');
   console.log(data);
-    const response = await fetch(url, {
+    const res = await fetch(url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     credentials: 'same-origin', // include, *same origin, omit
     headers: {
@@ -90,11 +91,14 @@ const postData = async ( url = '', data = {})=>{
     })
   });
     try {
-      const newData = await response.json();
+      // Transform into JSON
+      const newData = await res.json();
       console.log(newData);
       return newData;
-    }catch(error) {
-    console.log("error", error); // appropriately handle the error
+    }
+    catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
     }
 }
 
@@ -103,15 +107,22 @@ const postData = async ( url = '', data = {})=>{
 // UPDATE UI
 
 const updateUi = async ()=>{
-  const req = await fetch('/all');
+  const res = await fetch('/all');
+  console.log('Update UI Async GET Request response successful');
+  console.log(res);
   try {
-    const allData = await req.json();
+    // Transform into JSON
+    const allData = await res.json();
+    console.log(allData)
+    // Write updated data to DOM elements
     document.querySelector('#date').innerHTML = allData.date;
-    document.querySelector('#temp').innerHTML = Math.round(allData.temp)+ 'degrees';
+    document.querySelector('#temp').innerHTML = Math.round(allData.temp) + ' degrees';
     document.querySelector('#content').innerHTML = allData.content;
+    return allData;
   }
   catch(error) {
-    console.log('error', error); // appropriately handle the error
+    console.log('error', error);
+    // appropriately handle the error
   }
 }
 

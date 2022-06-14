@@ -2,8 +2,7 @@
 // SETUP ENDPOINT
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = {
-};
+projectData = {};
 
 
 // STEP 1 BOILERPLATE
@@ -43,8 +42,8 @@ const server = app.listen(port, ()=>{
 // SETUP GET ROUTE
 
 // GET Route
-app.get('/all', function (req, res) {
-    console.log(req); // logs request in terminal
+app.get('/all', function (req, res) { // STEP 10 CHANGE '/' TO '/all'
+    console.log(req);
     res.send(projectData);
 });
 
@@ -58,7 +57,7 @@ app.post('/addEntry', entryData);
 function entryData (req, res) {
     console.log('POST Request successful');
     console.log(req.body); // STEP 9
-    newEntry = {
+    projectData = {
         date: req.body.date, // project specific not boilerplate
         temp: req.body.temp, // project specific not boilerplate
         content: req.body.content // project specific not boilerplate
