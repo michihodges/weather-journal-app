@@ -39,7 +39,8 @@ function performAction(e) {
   // CHAIN POST PROMISE
   .then(function(data){
     // Add data to POST request
-    postData('/addEntry', {date: newDate, temp: data.main.temp, content})
+    //postData('/addEntry', {date: newDate, temp: data.main.temp, content})
+    postDataAxios('/addEntry', {date: newDate, temp: data.main.temp, content})
   })
 
 
@@ -76,7 +77,7 @@ const retrieveData = async (base, zip, key)=>{ // parameters are project specifi
 const postData = async ( url = '', data = {})=>{
   console.log('Async POST Request response successful');
   console.log(data);
-    const res = await fetch(url, {
+  const res = await fetch(url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     credentials: 'same-origin', // include, *same origin, omit
     headers: {
@@ -98,6 +99,33 @@ const postData = async ( url = '', data = {})=>{
       console.log("error", error);
       // appropriately handle the error
     }
+}
+
+
+// STEP 11 (OPTIONAL)
+// SETUP AXIOS INSTEAD OF FETCH POST REQUEST
+
+// Require Axios
+//const axios = require('axios').default;
+
+// Async Axios POST Request
+/*
+const newPost = {
+  date: data.date,
+  temp: data.temp,
+  content: data.content
+}
+*/
+
+const postDataAxios = async (url = '', data = {})=>{
+  try {
+    //const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
+    const res = await axios.post(url, data);
+    console.log(res);
+  }
+  catch(error) {
+    console.log('error', error);
+  }
 }
 
 
