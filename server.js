@@ -11,9 +11,10 @@ projectData = {};
 // Require Express to run server and routes
 const express = require('express');
 
-// Require Body-Parser and CORS
+// Require Body-Parser, CORS and Axios
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const axios = require('axios');
 
 // Start up an instance of app
 const app = express();
@@ -25,6 +26,9 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 app.use(cors());
+
+// Axios for easier XMLHttpRequests and HTTP requests
+app.use(axios());
 
 // Initialize the main project folder
 app.use(express.static('website'));
