@@ -14,7 +14,7 @@ const express = require('express');
 // Require Body-Parser, CORS and Axios
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios');
+//const axios = require('axios');
 
 // Start up an instance of app
 const app = express();
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Axios for easier XMLHttpRequests and HTTP requests
-app.use(axios());
+//app.use(axios());
 
 // Initialize the main project folder
 app.use(express.static('website'));
