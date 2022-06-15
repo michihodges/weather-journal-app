@@ -45,9 +45,7 @@ function performAction(e) {
 
   // STEP 10 BOILERPLATE
   // UPDATE UI
-  .then(
-    updateUi()
-  )
+  .then(()=>updateUi())
 }
 
 
