@@ -5,8 +5,8 @@ console.log('Hello world and welcome to my weather journal app');
 // AQUIRE API CREDENTIALS
 
 // API credentials
-let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-let apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
+const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
+const apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
 //const testZip = '10001'; // zip code for testing only
 
 
