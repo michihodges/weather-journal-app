@@ -11,9 +11,10 @@ projectData = {};
 // Require Express to run server and routes
 const express = require('express');
 
-// Require Body-Parser and CORS
+// Require Body-Parser, CORS and Axios
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const axios = require('axios').default;
 
 // Start up an instance of app
 const app = express();
