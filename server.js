@@ -66,39 +66,3 @@ function entryData (req, res) {
     res.send(projectData);
     console.log(projectData);
 }
-
-
-// TEST CODE
-
-// Lesson 3
-// HTTP Requests and Routes
-
-// Sub-lessons 3 and 4
-// GET route
-/*
-const appData = {};
-
-app.get('/all', function (req, res) {
-    // res.send({data : 'Hello World'}); // confirms GET request by sending set response 
-    console.log(req); // logs request in terminal
-    res.send(appData);
-    // res.send(projectData);
-});
-
-// Sub-lesson 4
-// POST route
-const data = [];
-
-app.post('/addMovie', function (req, res) {
-    req.send('POST received');
-    data.push(req.body);
-    console.log(req.body);
-});
-
-// Sub-lesson 6
-// POST route
-app.post('/add', function (request, response) {
-    let data = request.body;
-    console.log(data);
-});
-*/
