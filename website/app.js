@@ -109,14 +109,6 @@ const postData = async ( url = '', data = {})=>{
 //const axios = require('axios').default;
 
 // Async Axios POST Request
-/*
-const newPost = {
-  date: data.date,
-  temp: data.temp,
-  content: data.content
-}
-*/
-
 const postDataAxios = async (url = '', data = {})=>{
   try {
     //const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
