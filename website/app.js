@@ -7,7 +7,6 @@ console.log('Hello world and welcome to my weather journal app');
 // API credentials
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&appid=83fe249da30258ba3370fbbc31584eff&units=imperial';
-//const testZip = '10001'; // zip code for testing only
 
 
 // STEP 3
@@ -30,7 +29,6 @@ function performAction(e) {
   const content = document.querySelector('#feelings').value; // zip needs to be in function scope not global scope
   //retrieveData(baseUrl, testZip, apiKey);
   console.log('Event clicked and successfully retrieved data from API');
-  //console.log(`${baseUrl}${testZip}${apiKey}`);
   console.log(`${baseUrl}${zipCode}${apiKey}`);
   retrieveData(baseUrl, zipCode, apiKey)
 
@@ -39,8 +37,8 @@ function performAction(e) {
   // CHAIN POST PROMISE
   .then(function(data){
     // Add data to POST request
-    //postData('/addEntry', {date: newDate, temp: data.main.temp, content})
-    postDataAxios('/addEntry', {date: newDate, temp: data.main.temp, content})
+    postData('/addEntry', {date: newDate, temp: data.main.temp, content})
+    //postDataAxios('/addEntry', {date: newDate, temp: data.main.temp, content})
   })
 
 
@@ -106,10 +104,10 @@ const postData = async ( url = '', data = {})=>{
 // SETUP AXIOS INSTEAD OF FETCH POST REQUEST
 
 // Import Axios
-import axios from 'axios';
+//import axios from 'axios';
 
 // Require Axios
-const axios = require('axios').default;
+//const axios = require('axios').default;
 
 // Async Axios POST Request
 const postDataAxios = async (url = '', data = {})=>{
