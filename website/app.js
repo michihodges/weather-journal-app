@@ -100,28 +100,6 @@ const postData = async ( url = '', data = {})=>{
 }
 
 
-// STEP 11 (OPTIONAL)
-// SETUP AXIOS INSTEAD OF FETCH POST REQUEST
-
-// Import Axios
-//import axios from 'axios';
-
-// Require Axios
-//const axios = require('axios').default;
-
-// Async Axios POST Request
-const postDataAxios = async (url = '', data = {})=>{
-  try {
-    //const res = await axios.post('https://jsonplaceholder.typicode.com/posts', newPost);
-    const res = await axios.post(url, data);
-    console.log(res);
-  }
-  catch(error) {
-    console.log('error', error);
-  }
-}
-
-
 // STEP 10 BOILERPLATE
 // UPDATE UI
 
