@@ -14,7 +14,6 @@ const express = require('express');
 // Require Body-Parser, CORS and Axios
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios').default;
 
 // Start up an instance of app
 const app = express();
